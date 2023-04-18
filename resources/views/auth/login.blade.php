@@ -29,17 +29,17 @@
                     @csrf
 
                     <div class="form-floating col-md-12">
-                        <input type="email" class="form-control border-secondary shadow" id="email" name="email" placeholder="Email" required>
                         <label for="email">Email:</label>
+                        <input type="email" class="form-control border-secondary shadow" id="email" name="email" placeholder="Email" required>
                     </div>
 
                     <div class="form-floating col-md-12">
-                        <input type="password" class="form-control border-secondary shadow" id="password" name="password" placeholder="Senha" required>
                         <label for="password">Senha:</label>
+                        <input type="password" class="form-control border-secondary shadow" id="password" name="password" placeholder="Senha" required>
                     </div>
 
-                    <div style="position: relative;" class="mb-4 mt-3">
-                        <div class="form-check" style="position: absolute; left: 50%; transform: translate(-50%);">
+                    <div class="mb-4 mt-3">
+                        <div class="form-check">
                             <input class="form-check-input border-secondary shadow" type="checkbox" name="remember" id="remember">
                             <label class="form-check-label" for="remember">
                                 Manter conectado

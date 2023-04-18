@@ -29,23 +29,23 @@
                     @csrf
 
                     <div class="form-floating col-md-12">
-                        <input type="text" class="form-control border-secondary shadow @error('name') is-invalid @enderror" id="name" name="name" placeholder="Nome" required>
                         <label for="name">Nome:</label>
+                        <input type="text" class="form-control border-secondary shadow" id="name" name="name" placeholder="Nome" required>
                     </div>
 
                     <div class="form-floating col-md-12">
-                        <input type="email" class="form-control border-secondary shadow @error('email') is-invalid @enderror" id="email" name="email" placeholder="Email" required>
                         <label for="email">Email:</label>
+                        <input type="email" class="form-control border-secondary shadow" id="email" name="email" placeholder="Email" required>
                     </div>
     
                     <div class="form-floating col-md-12">
-                        <input type="password" class="form-control border-secondary shadow @error('password') is-invalid @enderror" id="password" name="password" placeholder="Senha" required>
                         <label for="password">Senha:</label>
+                        <input type="password" class="form-control border-secondary shadow" id="password" name="password" placeholder="Senha" required>
                     </div>
     
                     <div class="form-floating col-md-12">
-                        <input type="password" class="form-control border-secondary shadow @error('password') is-invalid @enderror" id="password_confirmation" name="password_confirmation" placeholder="Confirmar Senha" required>
                         <label for="password_confirmation">Confirmar Senha:</label>
+                        <input type="password" class="form-control border-secondary shadow" id="password_confirmation" name="password_confirmation" placeholder="Confirmar Senha" required>
                     </div>
     
                     <div class="col-12 text-center mt-4">

@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\AuthController;
 
-Route::get('/', [EventController::class, 'index']);
-Route::get('/events/create', [EventController::class, 'create']);
-Route::get('/events/{id}', [EventController::class, 'show']);
+Route::get('/', [EventController::class, 'index'])->name('home');
+Route::get('/events/create', [EventController::class, 'create'])->middleware('auth');
+Route::get('/events/{id}', [EventController::class, 'show'])->middleware('auth');
 Route::post('/events', [EventController::class, 'store']);
 
 
@@ -28,8 +28,7 @@ Route::get('/contact', function () {
 
 //Parte adicionada do Tutorial//
 // cadastrar usuário
-
-Route::get('/register', [AuthController::class, 'register'])->name('auth.register');
+Route::view('/register', 'auth.register')->name('auth.register');
 Route::post('/register/post', [AuthController::class, 'post'])->name('auth.post');
 
 // login e logout

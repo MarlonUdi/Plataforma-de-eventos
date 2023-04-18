@@ -9,10 +9,6 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    
-    public function register() {
-    	return view('auth.register');
-    }
 
     public function post(Request $request) {
 
@@ -30,7 +26,7 @@ class AuthController extends Controller
                 'email.unique' => '*Este email já está vinculado a uma conta existente!',
                 'password.required' => '*O campo de senha é obrigatório!',
                 'password.min' => '*A senha precisa ter no mínimo 8 digitos!',
-                'password_confirmation.required' => '*O campo de confirmar senha é obrigatório!'
+                'password_confirmation' => '*O campo de confirmar senha é obrigatório!'
             ]
         );
 
@@ -41,13 +37,14 @@ class AuthController extends Controller
         $user_register = [
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => Hash::make($data['password'])
         ];
+
         $user = User::create($user_register);
 
         Auth::login($user);
 
-        return redirect('/');
+        return redirect(route('home'));
     }
 
     public function auth(Request $request) {
@@ -77,7 +74,7 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/login');
+        return redirect(route('auth.login'));
     }
 
 // fim
