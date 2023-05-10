@@ -20,7 +20,6 @@
                     </th>
                 </tr>
             </thead>
-        </table>
 
         <tbody>
             @foreach($events as $events)
@@ -30,7 +29,8 @@
             </tr>
           
             @endforeach
-
+        </tbody>
+    </table>
     
     @else
     <p>Voce ainda não tem um evento, <a href="/events/create">Criar evento</a></p>

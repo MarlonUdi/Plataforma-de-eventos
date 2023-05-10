@@ -30,6 +30,10 @@
               <li class="nav-item">
                 <a href="/events/create" class="nav-link">Criar Eventos</a>
               </li>
+              <li class="nav-item">
+                <a href="/dashboard" class="nav-link">Painel</a>
+              </li>
+              
               @guest
                 <li class="nav-item">
                   <a href="{{ route('auth.login') }}" class="nav-link">Entrar</a>

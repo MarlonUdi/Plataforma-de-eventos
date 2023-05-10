@@ -6,7 +6,7 @@
     <h1>Meus Eventos</h1>
 </div>
 
-<div class="col-md-10 offset-md-1dashboard-events-container">
+<div class="col-md-10 offset-md-1-dashboard-events-container">
     @if(count($events) > 0)
 
         <table class="table">
@@ -16,23 +16,19 @@
                     <th scope="col">Nome</th>
                     <th scope="col">Participantes</th>
                     <th scope="col">Ações</th>
-
-                    </th>
                 </tr>
             </thead>
-       
-
         <tbody>
             @foreach($events as $events)
             <tr>
                 <td scropt="row">{{$loop->index +1 }}</td>
-                <td><a href="/events/{{ $events->id }}">{{$events->title }}</a>
+                <td><a href="/events/{{ $events->id }}">{{$events->title }}</a></td>
                 <td>0</td>  
-                <td><a href="#">Editar</a><a href="#">Deletar</a></td>
-
+                <td><a href="#">Editar</a>|<a href="#">Deletar</a></td>
             </tr>
-        </table>
             @endforeach
+        </table>
+            
 
     
     @else

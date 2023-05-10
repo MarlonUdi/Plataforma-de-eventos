@@ -26,6 +26,7 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+
 //Parte adicionada do Tutorial//
 // cadastrar usuário
 Route::view('/register', 'auth.register')->name('auth.register');
