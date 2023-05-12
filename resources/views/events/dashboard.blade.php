@@ -24,7 +24,7 @@
                 <td scropt="row">{{$loop->index +1 }}</td>
                 <td><a href="/events/{{ $events->id }}">{{$events->title }}</a></td>
                 <td>0</td>  
-                <td><a href="#" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon> Editar</a>
+                <td><a href="/events/edit/{{ $events->id}}" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon> Editar</a>
                     <form action="events/{{ $events->id}}" method="POST">
                     @csrf
                     @method('DELETE')

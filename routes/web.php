@@ -22,6 +22,8 @@ Route::get('/events/{id}', [EventController::class, 'show'])->middleware('auth')
 Route::post('/events', [EventController::class, 'store']);
 Route::get('/dashboard',[EventController::class,'dashboard'])->middleware('auth');
 Route::delete('/events/{id}',[EventController::class, 'destroy']);
+Route::get('/events/edit/{id}',[EventController::class, 'edit'])->middleware('auth');
+route::put('events/update/{id}',[EventController::class,'update'])->middleware('auth');
 
 
 Route::get('/contact', function () {
