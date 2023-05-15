@@ -23,8 +23,11 @@ class User extends Authenticatable
         	'remember_token',
     	];
 
-		public function events(){
-			return $this->hasMany('App\Models\Event');
+		public function events() {
+			return $this->hasMany(Event::class, 'user_id');
 		}
 
+		public function eventsAsParticipant() {
+			return $this->belongsToMany(Event::class);
+		}
     }

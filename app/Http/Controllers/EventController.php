@@ -71,11 +71,17 @@ class EventController extends Controller
 
     public function show($id) {
 
+        $user = auth()->user();
+
         $event = Event::findOrFail($id);
 
         $eventOwner = User::where('id', $event->user_id)->first()->toArray();
 
-        return view('events.show', ['event' => $event,'eventOwner'=>$eventOwner]);
+        return view('events.show', [
+            'event' => $event,
+            'eventOwner' => $eventOwner,
+            'user' => $user
+        ]);
         
     }
 
@@ -123,5 +129,17 @@ class EventController extends Controller
         return redirect('/dashboard')->with('msg', 'Evento editado com sucesso!');
     }
 
+       public function joinEvent($id) {
+
+        $user = auth()->user();
+
+        $user->eventsAsParticipant()->attach($id);
+
+        $event = Event::FindOrFail($id);
+
+        return redirect('/dashboard')->with('msg','Sua presença no evento foi confimada'.$event->title);
+
+
+       } 
 
 }

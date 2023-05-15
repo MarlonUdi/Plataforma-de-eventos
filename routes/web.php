@@ -18,14 +18,15 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/', [EventController::class, 'index'])->name('home');
 Route::get('/events/create', [EventController::class, 'create'])->middleware('auth');
-Route::get('/events/{id}', [EventController::class, 'show'])->middleware('auth');
+Route::get('/events/{id}', [EventController::class, 'show']);
 Route::post('/events', [EventController::class, 'store']);
 Route::get('/dashboard',[EventController::class,'dashboard'])->middleware('auth');
 Route::delete('/events/{id}',[EventController::class, 'destroy']);
 Route::get('/events/edit/{id}',[EventController::class, 'edit'])->middleware('auth');
-route::put('events/update/{id}',[EventController::class,'update'])->middleware('auth');
+route::put('/events/update/{id}',[EventController::class,'update'])->middleware('auth');
+route::post('/events/join/{id}',[EventController::class, 'joinEvent'])->middleware('auth');
 
-
+//Modelo básico de rota//
 Route::get('/contact', function () {
     return view('contact');
 });
