@@ -15,14 +15,21 @@
 
         <form action="/events/join/{{ $event->id}}" method="POST">
           @CSRF
-          <a href="/events/join/{{ $event->id}}" 
+         @if(!$hasUserJoined)
+
+         <a href="/events/join/{{ $event->id}}" 
           class="btn btn-primary"
           id="event-submit"
           onclick="event.preventDefault();
           this.closest('form').submit();">
             Confirmar Presença
           </a>
-        </form>
+        </form> 
+
+         @else
+        <p class="alread-joined-msg">Voce já está participando</p>
+         @endif
+
 
         <h3>O evento conta com:</h3>
         <ul id="items-list">

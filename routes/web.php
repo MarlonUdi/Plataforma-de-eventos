@@ -25,6 +25,7 @@ Route::delete('/events/{id}',[EventController::class, 'destroy']);
 Route::get('/events/edit/{id}',[EventController::class, 'edit'])->middleware('auth');
 route::put('/events/update/{id}',[EventController::class,'update'])->middleware('auth');
 route::post('/events/join/{id}',[EventController::class, 'joinEvent'])->middleware('auth');
+route::delete('/events/leave/{id}',[EventController::class, 'leaveEvent'])->middleware('auth');
 
 //Modelo básico de rota//
 Route::get('/contact', function () {
@@ -41,4 +42,5 @@ Route::post('/register/post', [AuthController::class, 'post'])->name('auth.post'
 Route::view('/login', 'auth.login')->name('auth.login');
 Route::post('/login/auth', [AuthController::class, 'auth'])->name('auth.auth');
 Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout')->middleware('auth');
+
 

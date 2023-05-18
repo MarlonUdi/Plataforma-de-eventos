@@ -42,6 +42,17 @@ header {
   padding: 10px;
 }
 
+#info-container .alread-joined-msg{
+  margin: 15px 1;
+  color: #004085;
+  background-color: #CCE5FF;
+  border: 1px;
+  padding: 10 px;
+  width: 275px ;
+
+
+}
+
 /* navbar */
 #navbar img {
   width: 40px;
