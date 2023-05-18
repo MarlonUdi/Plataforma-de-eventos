@@ -30,6 +30,7 @@
 
                     <div class="form-floating col-md-12">
                         <label for="name">Nome:</label>
+                    
                         <input type="text" class="form-control border-secondary shadow" id="name" name="name" placeholder="Nome" required>
                     </div>
 

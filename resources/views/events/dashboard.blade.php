@@ -28,8 +28,10 @@
                                 {{$event->title }}
                             </a>
                         </td>
+
                         <td>
                             {{ count($event->users) }}
+
                         </td>  
                         <td>
                             <a href="/events/edit/{{ $event->id}}" class="btn btn-sm shadow btn-info edit-btn">
@@ -59,5 +61,53 @@
     @endif
 
 </div>
+<div class="col-md-10 mx-auto text-center my-3 offset-md-1-dashboard-title-container">
 
+    <h1>Eventos que estou participando</h1>
+
+</div>
+<div class="col-md-10 mx-auto offset-md-1-dashboard-events-container">
+
+    @if(count($eventsasparticipant) > 0)
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Participantes</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($eventsasparticipant as $event)
+                <tr>
+                    <td scropt="row">
+                        {{ $loop->index +1 }} - ID: {{ $event->id }}
+                    </td>
+                    <td>
+                        <a href="/events/{{ $event->id }}" class="btn btn-sm btn-secondary shadow">
+                            {{$event->title }}
+                        </a>
+                    </td>
+                    <td>
+                        {{ count($event->users) }}
+                    </td>  
+                    <td>
+                    <a href="#"
+                    class="btn btn-sm shadow btn-info edit-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+                        <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+                      </svg> Sair do evento</a>
+                </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+
+    @else
+    <p>Você ainda não está partcipando de nenhum evento, <a href="/" >veja todos os eventos</a></p>
+    @endif
+</div>
 @endsection
