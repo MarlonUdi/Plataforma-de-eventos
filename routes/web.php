@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\AuthController;
 
+Route::get('/download/{event_id}', [EventController::class, 'download_file'])->name('download.file')->middleware('auth');
 Route::get('/', [EventController::class, 'index'])->name('home');
 Route::get('/events/create', [EventController::class, 'create'])->middleware('auth');
 Route::get('/events/{id}', [EventController::class, 'show']);

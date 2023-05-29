@@ -11,9 +11,24 @@ use App\Models\User;
 class EventController extends Controller
 {
 
+    public function download_file($event_id) {
+        
+
+        $event = Event::findOrFail($event_id);
+
+        $file = $event->image;
+
+        $path = public_path('img/events/' . $file);
+
+        $extension = explode('.', $file);
+        $extension = '.' . $extension[1];
+        $file_name = $event->title . $extension;
+
+        return response()->download($path, $file_name);
+    }
+
     public function index()
     {
-
         $search = request('search');
 
         if ($search) {

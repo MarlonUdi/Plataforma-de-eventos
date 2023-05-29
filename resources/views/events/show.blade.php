@@ -25,12 +25,16 @@
             Confirmar Presença
           </a>
         </form> 
-
-         @else
+        
+        
+        @else
         <p class="alread-joined-msg">Voce já está participando</p>
-         @endif
-
-
+        @endif
+        
+        <a href="{{ route('download.file', ['event_id' => $event->id]) }}" class="btn btn-secondary btn-sm shadow">
+          Download
+        </a>
+        
         <h3>O evento conta com:</h3>
         <ul id="items-list">
         @foreach($event->items as $item)

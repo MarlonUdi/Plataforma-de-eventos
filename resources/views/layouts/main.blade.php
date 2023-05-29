@@ -23,6 +23,7 @@
             <a href="/" class="navbar-brand">
               <img src="/img/hdcevents_logo.svg" alt="HDC Events">
             </a>
+            <h3 class="main-title">HDCEVENTS</h3>
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a href="/" class="nav-link">Eventos</a>

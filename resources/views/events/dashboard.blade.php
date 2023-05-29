@@ -24,7 +24,7 @@
                             {{ $loop->index +1 }} - ID: {{ $event->id }}
                         </td>
                         <td>
-                            <a href="/events/{{ $event->id }}" class="btn btn-sm btn-secondary shadow">
+                            <a href="/events/{{ $event->id }}" class="btn btn-sm btn shadow">
                                 {{$event->title }}
                             </a>
                         </td>
